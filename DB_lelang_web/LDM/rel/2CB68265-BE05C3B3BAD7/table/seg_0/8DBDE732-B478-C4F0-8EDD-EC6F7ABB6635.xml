@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8DBDE732-B478-C4F0-8EDD-EC6F7ABB6635" name="item_lelang">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>145895AF-D691-B259-2CCF-89A6480FD21D</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_item" id="745F197A-B12A-A800-E951-CDC971523397">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>0A794140-02F5-35C9-8C4B-B62163DC4020</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nama_item" id="E360A876-8F17-D38B-7E10-F17B991C51C0">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>84D2D57D-30D4-7600-D84D-CF55C64B71E3</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="judul_item" id="C89DF750-B72C-7870-483F-3CFA3C81D22C">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>1AF2DE44-4B04-3182-08E1-653BE5FD0B81</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="deskripsi_item" id="58BB9D43-A7CB-210A-FE4F-E695D67F0884">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>D09BC06C-BC09-7F9D-C3EB-67F658CD929C</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auctioner_id_auctioner" id="861951E9-7FF8-F167-4FF3-DD3698FAFF63">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>39EC186E-61B6-05DA-69F6-52C01B924CFD</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="29C22705-7561-9862-F869-0770199CF8D1" referredColumn="46529009-82E3-F9AB-CFE7-7BE92AC4D625"/>
+</associations>
+</Column>
+<Column name="bidder_id_bidder" id="718CC9A7-687F-34D5-395E-DDE59BDA0211">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>C0AA4F7F-7E4A-7299-7EC7-97C339E457F8</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="090AA5FC-FACB-3467-145C-24B45B17EA78" referredColumn="90FA1A5F-0466-84BC-BC2B-572281A8343F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DFA5B528-8F37-7476-2DB5-7879E8688590" name="item_lelang_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>284F8D1F-5D98-3952-CA70-93963F6C5396</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="745F197A-B12A-A800-E951-CDC971523397"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="960B8307-0AAE-C385-2AA0-311D5E7FCE2B" name="item_lelang_bidder_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>F76D08B6-B480-0140-CBFF-FEA33EE54650</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="718CC9A7-687F-34D5-395E-DDE59BDA0211"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A1978C8-033E-1BE9-DD2F-E37ECA0CC4E0" name="item_lelang_auctioner_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>9051B7B4-DCD9-3DFE-D1AB-C92DE41A6417</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="861951E9-7FF8-F167-4FF3-DD3698FAFF63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="03F9C9B1-498F-BF7B-3CDD-62810D5D0DAE" name="riwayat_lelang">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:40:53 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_riwayat" id="9CBC5362-A586-C7C9-7CD3-AB4C61372618">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:54:10 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waktu_lelang" id="8113759A-2431-5CB7-35C8-E40435C5BA70">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:54:31 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_item" id="4E60A15E-89B7-1E32-12E2-ED000791D6E7">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:03 UTC</createdTime>
+<generatorID>635BAAA2-B96F-346B-7BD9-095BAF548CEF</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<referedAttribute>0A794140-02F5-35C9-8C4B-B62163DC4020</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="51F60346-625B-E93C-CB28-45767D949289" name="riwayat_lelang PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:54:30 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9CBC5362-A586-C7C9-7CD3-AB4C61372618</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

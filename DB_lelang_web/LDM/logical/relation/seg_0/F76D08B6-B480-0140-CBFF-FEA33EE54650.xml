@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="bid_on" directorySegmentName="seg_0" id="F76D08B6-B480-0140-CBFF-FEA33EE54650">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:56:49 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<sourcePk>77DA2DCE-184D-AE56-C20E-8576E4ACD950</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>48825DF6-5EB8-5BEF-C8D0-CA235B608592</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>145895AF-D691-B259-2CCF-89A6480FD21D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

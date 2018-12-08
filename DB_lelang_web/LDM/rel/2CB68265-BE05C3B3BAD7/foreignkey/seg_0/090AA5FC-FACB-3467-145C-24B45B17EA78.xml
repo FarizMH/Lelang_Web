@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="090AA5FC-FACB-3467-145C-24B45B17EA78" containerWithKeyObject="8DBDE732-B478-C4F0-8EDD-EC6F7ABB6635" localFKIndex="960B8307-0AAE-C385-2AA0-311D5E7FCE2B" name="item_lelang_bidder_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>F76D08B6-B480-0140-CBFF-FEA33EE54650</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<referredTableLongName>bidder</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0692CD23-138F-3126-12C0-3A66B470A340</referredTableID>
+<keyObject>5AEA58E6-E0AE-4F93-168A-DDD04775423E</keyObject>
+<referredKeyID>5AEA58E6-E0AE-4F93-168A-DDD04775423E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_bidder</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="LDM" id="EF10EE41-54AB-0E12-FEEA-3C25609446D9" version="3.5">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:39:40 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>EF10EE41-54AB-0E12-FEEA-3C25609446D9</designId>
+</OSDM_Design>

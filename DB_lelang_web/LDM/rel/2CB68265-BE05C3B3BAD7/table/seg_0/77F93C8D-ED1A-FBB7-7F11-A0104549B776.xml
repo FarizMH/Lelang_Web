@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77F93C8D-ED1A-FBB7-7F11-A0104549B776" name="riwayat_lelang">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>03F9C9B1-498F-BF7B-3CDD-62810D5D0DAE</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_riwayat" id="FC7E8F02-A010-57A3-A56D-0463A31EBAB0">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>9CBC5362-A586-C7C9-7CD3-AB4C61372618</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="waktu_lelang" id="6935373A-382F-60F4-A9E3-68AEE8B42686">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>8113759A-2431-5CB7-35C8-E40435C5BA70</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="item_lelang_id_item" id="2BE553A5-94B7-C953-59EF-BB93E64996F9">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>4E60A15E-89B7-1E32-12E2-ED000791D6E7</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F85FC0C-0BDF-6D6E-A4D0-5AE18CE4D52D" referredColumn="745F197A-B12A-A800-E951-CDC971523397"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43D8BC54-47DD-9F88-C02B-8BF133040F92" name="riwayat_lelang_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>51F60346-625B-E93C-CB28-45767D949289</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC7E8F02-A010-57A3-A56D-0463A31EBAB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F22EFE3B-F523-362D-1827-CD0E1CF5C728" name="riwayat_lelang__IDX">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>635BAAA2-B96F-346B-7BD9-095BAF548CEF</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="2BE553A5-94B7-C953-59EF-BB93E64996F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A473F76-3A1C-1A2F-A45A-941ABD32BAAF" name="riwayat_lelang_item_lelang_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>635BAAA2-B96F-346B-7BD9-095BAF548CEF</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BE553A5-94B7-C953-59EF-BB93E64996F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

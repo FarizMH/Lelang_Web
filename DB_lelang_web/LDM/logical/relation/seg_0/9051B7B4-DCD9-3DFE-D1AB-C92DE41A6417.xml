@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="melelang" directorySegmentName="seg_0" id="9051B7B4-DCD9-3DFE-D1AB-C92DE41A6417">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:55:49 UTC</createdTime>
+<ownerDesignName>LDM</ownerDesignName>
+<engineerTo>
+<item key="2CB68265-E96E-5C3C-B59B-BE05C3B3BAD7" value="true"/>
+</engineerTo>
+<sourcePk>C1000C02-11C0-1378-EED4-282665FEF695</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CF733C6C-20F5-A3FD-7774-CB956F3B14EF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>145895AF-D691-B259-2CCF-89A6480FD21D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

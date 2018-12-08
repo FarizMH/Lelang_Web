@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0692CD23-138F-3126-12C0-3A66B470A340" name="bidder">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>48825DF6-5EB8-5BEF-C8D0-CA235B608592</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_bidder" id="90FA1A5F-0466-84BC-BC2B-572281A8343F">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>E6C025F3-8282-EAD2-CEC8-D4C73DCA7E55</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nama_bidder" id="D798B44B-D500-FA11-C912-DB377183B6AC">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>CCBE2C3B-B20F-AB6D-CEFE-F329B5774593</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email_bidder" id="597AC9DB-F418-1E14-4708-A0A5A0039B1C">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>8FED4064-C80D-7557-BEEC-A1EF5421B1DF</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="alamat_bidder" id="AB4ED514-A4DE-0F06-B23E-3015E05E6E93">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>1B71C2E1-F200-18CE-8845-F23999768F28</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="no_hp_bidder" id="B08C8B95-F55E-4816-6E63-E16CF3E994D4">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>507A341E-4E66-EEBD-315A-B6E93EEE5759</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="no_atm_bidder" id="B14B4FB7-5AA2-08C2-B7F8-3A120DC82D1E">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>0AE1E9B0-5DAA-BAA6-94BB-31A969D778B9</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password_bidder" id="3F66BFDB-7DD2-1319-96C0-D027E57F6B0D">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>1D84E72F-33FC-C3A1-E9A0-9E99C49096B3</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AEA58E6-E0AE-4F93-168A-DDD04775423E" name="bidder_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2018-12-03 18:57:24 UTC</createdTime>
+<generatorID>77DA2DCE-184D-AE56-C20E-8576E4ACD950</generatorID>
+<ownerDesignName>LDM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90FA1A5F-0466-84BC-BC2B-572281A8343F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

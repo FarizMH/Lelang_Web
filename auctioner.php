@@ -1,52 +1,3 @@
-<?php
-
-require_once("config.php");
-
-if(isset($_POST['register'])){
-
-    // filter data yang diinputkan
-    $id_bidder = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $nama_lengkap = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
-    $emailBidder = filter_input(INPUT_POST, 'email_bidder', FILTER_VALIDATE_EMAIL);
-    $phone_number = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    $adress_bidder = filter_input(INPUT_POST, 'adress', FILTER_SANITIZE_STRING);
-    $no_ATM = filter_input(INPUT_POST, 'noATM', FILTER_SANITIZE_STRING);
-    
-    
-    // enkripsi password
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    
-
-
-    // menyiapkan query
-    $sql = "INSERT INTO bidder (ID_BIDDER, NAMA_BIDDER,EMAIL_BIDDER, NO_HP_BIDDER, ALAMAT_BIDDER, NO_ATM_BIDDER, PASSWORD_BIDDER) 
-            VALUES (:username, :fullname, :email_bidder, :phone, :adress,:noATM, :password)";
-    $stmt = $db->prepare($sql);
-
-    // bind parameter ke query
-    $params = array(
-        ":username" => $id_bidder,
-        ":fullname" => $nama_lengkap,
-        ":email_bidder" => $emailBidder,
-        ":phone" => $phone_number,
-        ":adress" => $adress_bidder,
-        ":noATM" => $no_ATM,
-        ":password" =>$password
-    );
-
-    // eksekusi query untuk menyimpan ke database
-    $saved = $stmt->execute($params);
-
-    // jika query simpan berhasil, maka user sudah terdaftar
-    // maka alihkan ke halaman login
-
-    if($saved) header("Location: login_bidder.php");
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,6 +23,7 @@ if(isset($_POST['register'])){
 
     
     <style>
+
 body {
     color: #fff;
     background: url('lelang.png');
@@ -235,7 +187,7 @@ body {
     </nav>
     
 
-<form action="" method="POST">
+
 <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
@@ -253,56 +205,48 @@ body {
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Daftar sebagai bidder</h3>
+                       
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3  class="register-heading">Apply as a Hirer</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control" placeholder="Username*" value="" />
+                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="fullname" class="form-control" placeholder="Nama Lengkap" value="" />
+                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email_bidder" class="form-control" placeholder="Your Email *" value="" />
+                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
                                         </div>
 
-                                        <div class="form-group">
-                                            <input type="text" name="phone" minlength="12" maxlength="12" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                        </div>
 
-                                        <div class="form-group">
-                                            
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        
                                         <div class="form-group">
-                                            <input type="text" name="adress" class="form-control"  placeholder="Alamat *" value="" />
+                                            <input type="password" class="form-control" placeholder="Password *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="noATM" class="form-control" placeholder="No KTP *" value="" name="noATM"/>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control"  placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
                                         </div>
                                         <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
                                         </div>
-                                        
-                                        <input type="submit" name="register" class="btnRegister"  value="Register"/>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  value="" for="answer"/>
+                                        </div>
+                                        <input type="submit" class="btnRegister"  value="Register"/>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
 
             </div>
-</form>
-
 
 </body>
 </html>

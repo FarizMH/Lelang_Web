@@ -68,7 +68,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="register.php">Bidders</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">auctioner</a>
+                        <a class="dropdown-item" href="auctioner.php">auctioner</a>
                     </div>
                 </li>
           </ul>
@@ -98,6 +98,9 @@
         break;
       case 'bidders':
         include "register.php";
+        break;
+        case 'auctioner':
+        include "register_auctioner.php";
         break;
       default:
         echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";

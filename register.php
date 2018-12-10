@@ -247,10 +247,10 @@ body {
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.php" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.php" role="tab" aria-controls="home" aria-selected="true">BIDDER</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">AUCTIONER</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">

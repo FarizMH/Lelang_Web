@@ -1,3 +1,53 @@
+<?php
+
+require_once("config.php");
+
+if(isset($_POST['auctioner'])){
+
+    // filter data yang diinputkan
+    $id_auctioner = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $no_ktp = filter_input(INPUT_POST, 'noKTP', FILTER_SANITIZE_STRING);
+    $nama_lengkap = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
+    $emailAuctioner = filter_input(INPUT_POST, 'email_auctioner', FILTER_VALIDATE_EMAIL);
+    $adress_auctioner = filter_input(INPUT_POST, 'alamat_auctioner', FILTER_SANITIZE_STRING);
+    $phone_number = filter_input(INPUT_POST, 'phoneNumber', FILTER_SANITIZE_STRING);
+   
+    $no_ATM = filter_input(INPUT_POST, 'noATM', FILTER_SANITIZE_STRING);
+    
+    
+    // enkripsi password
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    
+
+
+    // menyiapkan query
+    $sql = "INSERT INTO auctioner (ID_AUCTIONER, NO_KTP, NAMA_AUCTIONER,EMAIL_AUCTIONER, ALAMAT_AUCTIONER, NO_HP_AUCTIONER, NO_ATM_AUCTIONER, PASSWORD_AUCTIONER) 
+            VALUES (:username, :noKTP, :fullname, :email_auctioner, :alamat_auctioner, :phoneNumber, :noATM, :password)";
+    $stmt = $db->prepare($sql);
+
+    // bind parameter ke query
+    $params = array(
+        ":username" => $id_auctioner,
+        ":noKTP" => $no_ktp,
+        ":fullname" => $nama_lengkap,
+        ":email_auctioner" => $emailAuctioner,
+        ":alamat_auctioner" => $adress_auctioner,
+        ":phoneNumber" => $phone_number,
+        ":noATM" => $no_ATM,
+        ":password" =>$password
+    );
+
+    // eksekusi query untuk menyimpan ke database
+    $saved = $stmt->execute($params);
+
+    // jika query simpan berhasil, maka user sudah terdaftar
+    // maka alihkan ke halaman login
+
+    if($saved) header("Location: login_bidder.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -187,7 +237,7 @@ body {
     </nav>
     
 
-
+<form action="" method="POST">
 <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
@@ -199,10 +249,10 @@ body {
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.php" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.php" role="tab" aria-controls="home" aria-selected="true">BIDDER</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">AUCTIONER</a>
                             </li>
                         </ul>
                        
@@ -211,34 +261,32 @@ body {
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" name="username"class="form-control" placeholder="Username*" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                            <input type="text" name="noKTP" class="form-control" placeholder="no KTP *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                            <input type="text" name="fullname" class="form-control" placeholder="Full Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                            <input type="email" name="email_auctioner" class="form-control" placeholder="Email *" value="" />
                                         </div>
-
-
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="text" name="alamat_auctioner" class="form-control" placeholder="Adress *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                            <input type="text" name="phoneNumber" maxlength="12" minlength="11" class="form-control" placeholder="Phone *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                            <input type="text" name="noATM" class="form-control" placeholder="no ATM *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  value="" for="answer"/>
+                                            <input type="password" name="password" class="form-control" placeholder="`password *" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                        <input type="submit" name="auctioner" class="btnRegister"  value="Register"/>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +294,7 @@ body {
                     </div>
                 </div>
 
-            </div>
+</form>
 
 </body>
 </html>

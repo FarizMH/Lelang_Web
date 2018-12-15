@@ -6,8 +6,8 @@ if(isset($_POST['auctioner'])){
 
     // filter data yang diinputkan
     $id_auctioner = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $no_ktp = filter_input(INPUT_POST, 'noKTP', FILTER_SANITIZE_STRING);
     $nama_lengkap = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
+     $no_ktp = filter_input(INPUT_POST, 'noKTP', FILTER_SANITIZE_STRING);
     $emailAuctioner = filter_input(INPUT_POST, 'email_auctioner', FILTER_VALIDATE_EMAIL);
     $adress_auctioner = filter_input(INPUT_POST, 'alamat_auctioner', FILTER_SANITIZE_STRING);
     $phone_number = filter_input(INPUT_POST, 'phoneNumber', FILTER_SANITIZE_STRING);
@@ -21,20 +21,20 @@ if(isset($_POST['auctioner'])){
 
 
     // menyiapkan query
-    $sql = "INSERT INTO auctioner (ID_AUCTIONER, NO_KTP, NAMA_AUCTIONER,EMAIL_AUCTIONER, ALAMAT_AUCTIONER, NO_HP_AUCTIONER, NO_ATM_AUCTIONER, PASSWORD_AUCTIONER) 
-            VALUES (:username, :noKTP, :fullname, :email_auctioner, :alamat_auctioner, :phoneNumber, :noATM, :password)";
+    $sql = "INSERT INTO auctioner (USERNAME_AUCTIONER, NAMA_AUCTIONER, NO_KTP, EMAIL_AUCTIONER, ALAMAT_AUCTIONER, NO_HP_AUCTIONER, NO_ATM_AUCTIONER, PASSWORD_AUCTIONER) 
+            VALUES (:username, :fullname, :noKTP, :email_auctioner, :alamat_auctioner, :phoneNumber, :noATM, :password)";
     $stmt = $db->prepare($sql);
 
     // bind parameter ke query
     $params = array(
         ":username" => $id_auctioner,
-        ":noKTP" => $no_ktp,
         ":fullname" => $nama_lengkap,
+        ":noKTP" => $no_ktp,
         ":email_auctioner" => $emailAuctioner,
         ":alamat_auctioner" => $adress_auctioner,
         ":phoneNumber" => $phone_number,
         ":noATM" => $no_ATM,
-        ":password" =>$password
+        ":password" => $password
     );
 
     // eksekusi query untuk menyimpan ke database
@@ -43,9 +43,8 @@ if(isset($_POST['auctioner'])){
     // jika query simpan berhasil, maka user sudah terdaftar
     // maka alihkan ke halaman login
 
-    if($saved) header("Location: login_bidder.php");
+    if($saved) header("Location: login_auctioner.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -257,7 +256,7 @@ body {
                         </ul>
                        
                             <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Apply as a Hirer</h3>
+                                <h3  class="register-heading">daftar sebagai auctioner sekarang!!!</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">

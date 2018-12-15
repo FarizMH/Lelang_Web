@@ -1,3 +1,14 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
+
+<?php require_once("auth.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,16 +72,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Register
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="register.php">Bidders</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="auctioner.php">auctioner</a>
-                    </div>
-                </li>
+             <li class="nav-item">
+              <a class="nav-link" ><?php echo $_SESSION['username']; ?></a>
+            </li>
           </ul>
         </div>
 

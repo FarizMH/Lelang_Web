@@ -1,3 +1,5 @@
+<?php require_once("auth.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php?page=home">Home
+              <a class="nav-link" href="home_user.php?page=home">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -61,16 +63,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Register
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="register.php">Bidders</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="auctioner.php">auctioner</a>
-                    </div>
-                </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="log_out.php">log_out</a>
+              </div>
+            </li>
           </ul>
         </div>
 

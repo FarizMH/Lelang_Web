@@ -1,48 +1,17 @@
+<?php include 'config.php';?>
 <?php
-
-require_once("config.php");
-
-if(isset($_POST['register'])){
-
-    // filter data yang diinputkan
-    $id_bidder = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $nama_lengkap = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
-    $emailBidder = filter_input(INPUT_POST, 'email_bidder', FILTER_VALIDATE_EMAIL);
-    $phone_number = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    $adress_bidder = filter_input(INPUT_POST, 'adress', FILTER_SANITIZE_STRING);
-    $no_ATM = filter_input(INPUT_POST, 'noATM', FILTER_SANITIZE_STRING);
+if (isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email_bidder'];
+    $password = $_POST['password'];
+    // Getting submitted user data from database
     
-    
-    // enkripsi password
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    
-
-
-    // menyiapkan query
-    $sql = "INSERT INTO bidder (ID_BIDDER, NAMA_BIDDER,EMAIL_BIDDER, NO_HP_BIDDER, ALAMAT_BIDDER, NO_ATM_BIDDER, PASSWORD_BIDDER) 
-            VALUES (:username, :fullname, :email_bidder, :phone, :adress,:noATM, :password)";
-    $stmt = $db->prepare($sql);
-
-    // bind parameter ke query
-    $params = array(
-        ":username" => $id_bidder,
-        ":fullname" => $nama_lengkap,
-        ":email_bidder" => $emailBidder,
-        ":phone" => $phone_number,
-        ":adress" => $adress_bidder,
-        ":noATM" => $no_ATM,
-        ":password" =>$password
-    );
-
-    // eksekusi query untuk menyimpan ke database
-    $saved = $stmt->execute($params);
-
-    // jika query simpan berhasil, maka user sudah terdaftar
-    // maka alihkan ke halaman login
-
-    if($saved) header("Location: login_bidder.php");
+    $query = "INSERT INTO bidder (username_bidder,nama_bidder,email_bidder,password_bidder)
+    values ('$username','$fullname', '$email', '$password')";
+    $result = mysqli_query($sql,$query);
+    header("Location: login.php");
 }
-
 ?>
 
 
@@ -79,7 +48,7 @@ body {
 }
 .register{
     
-    margin-top: 3%;
+    margin-top: 5%;
     padding: 3%;
 
     
@@ -132,7 +101,7 @@ body {
 }
 .btnRegister{
     float: right;
-    margin-top: 10%;
+    margin-top: 0%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
@@ -170,8 +139,8 @@ body {
 }
 .register-heading{
     text-align: center;
-    margin-top: 8%;
-    margin-bottom: -15%;
+    margin-top: 5%;
+    margin-bottom: -10%;
     color: #495057;
 }
 </style>
@@ -242,7 +211,8 @@ body {
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome</h3>
                         <p>You are 30 seconds away from earning your own money!</p>
-                        <input type="submit" name="" value="Login"/><br/>
+                        <a href="login.php" class="btn btn-secondary">Login</a>
+                       
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -259,7 +229,7 @@ body {
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control" placeholder="Username*" value="" />
+                                            <input type="text" name="username" class="form-control" minlength="8" maxlength="20" placeholder="Username*" value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="fullname" class="form-control" placeholder="Nama Lengkap" value="" />
@@ -267,32 +237,14 @@ body {
                                         <div class="form-group">
                                             <input type="email" name="email_bidder" class="form-control" placeholder="Your Email *" value="" />
                                         </div>
-
-                                        <div class="form-group">
-                                            <input type="text" name="phone" minlength="12" maxlength="12" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                        </div>
-
-                                        <div class="form-group">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        
-                                        <div class="form-group">
-                                            <input type="text" name="adress" class="form-control"  placeholder="Alamat *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="noATM" class="form-control" placeholder="No KTP *" value="" name="noATM"/>
-                                        </div>
-                                        
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control"  placeholder="Password *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                        </div>
                                         
                                         <input type="submit" name="register" class="btnRegister"  value="Register"/>
+
                                     </div>
+                                    
                                 </div>
                             </div>
                             

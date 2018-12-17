@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +11,30 @@
 	<form action="aksi_upload" method="POST"  >
 		
 		
-		<input class="form-control" type="text" name="judul" placeholder="judul Lelang" />
+		
 		
 		
 	</form>
 	<form action="aksi_upload" method="POST"  >
-		<textarea name="deskripsi" cols="45" row="5" placeholder="deskripsi"></textarea>
-	
+		
+		
+		
 	</form>
 	<form action="aksi_upload.php" method="post" enctype="multipart/form-data">
+		
+		<div class="form-group">
+
+		<input type="text" name="judul" placeholder="judul Lelang" class="form-control" value="" />
+
+		</div>
+		<div class="form-group">
+
+		<input type="number" name="openBid" placeholder="open BID" class="form-control" min="0"/>
+
+		</div>
+		<div class="form-group">
+			<textarea name="deskripsi" cols="45" row="5" placeholder="deskripsi"></textarea>
+		</div>
 		<input type="file" name="file">
 		<input type="submit" name="upload" value="Upload">
 		

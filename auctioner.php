@@ -1,51 +1,18 @@
+<?php include 'config.php';?>
 <?php
-
-require_once("config.php");
-
-if(isset($_POST['auctioner'])){
-
-    // filter data yang diinputkan
-    $id_auctioner = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $nama_lengkap = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
-     $no_ktp = filter_input(INPUT_POST, 'noKTP', FILTER_SANITIZE_STRING);
-    $emailAuctioner = filter_input(INPUT_POST, 'email_auctioner', FILTER_VALIDATE_EMAIL);
-    $adress_auctioner = filter_input(INPUT_POST, 'alamat_auctioner', FILTER_SANITIZE_STRING);
-    $phone_number = filter_input(INPUT_POST, 'phoneNumber', FILTER_SANITIZE_STRING);
-   
-    $no_ATM = filter_input(INPUT_POST, 'noATM', FILTER_SANITIZE_STRING);
+if (isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    // Getting submitted user data from database
     
-    
-    // enkripsi password
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    
-
-
-    // menyiapkan query
-    $sql = "INSERT INTO auctioner (USERNAME_AUCTIONER, NAMA_AUCTIONER, NO_KTP, EMAIL_AUCTIONER, ALAMAT_AUCTIONER, NO_HP_AUCTIONER, NO_ATM_AUCTIONER, PASSWORD_AUCTIONER) 
-            VALUES (:username, :fullname, :noKTP, :email_auctioner, :alamat_auctioner, :phoneNumber, :noATM, :password)";
-    $stmt = $db->prepare($sql);
-
-    // bind parameter ke query
-    $params = array(
-        ":username" => $id_auctioner,
-        ":fullname" => $nama_lengkap,
-        ":noKTP" => $no_ktp,
-        ":email_auctioner" => $emailAuctioner,
-        ":alamat_auctioner" => $adress_auctioner,
-        ":phoneNumber" => $phone_number,
-        ":noATM" => $no_ATM,
-        ":password" => $password
-    );
-
-    // eksekusi query untuk menyimpan ke database
-    $saved = $stmt->execute($params);
-
-    // jika query simpan berhasil, maka user sudah terdaftar
-    // maka alihkan ke halaman login
-
-    if($saved) header("Location: login_auctioner.php");
+    $query = "INSERT INTO auctioner (id,username_auctioner,nama_auctioner,no_ktp,email_auctioner,alamat_auctioner,no_hp_auctioner,no_atm_auctioner,password_auctioner)
+    values (NULL,'$username',NULL,NULL,NULL,NULL,NULL,NULL, '$password')";
+    $result = mysqli_query($sql,$query);
+    header("Location: login.php");
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -72,7 +39,6 @@ if(isset($_POST['auctioner'])){
 
     
     <style>
-
 body {
     color: #fff;
     background: url('lelang.png');
@@ -80,7 +46,7 @@ body {
 }
 .register{
     
-    margin-top: 3%;
+    margin-top: 5%;
     padding: 3%;
 
     
@@ -133,7 +99,7 @@ body {
 }
 .btnRegister{
     float: right;
-    margin-top: 10%;
+    margin-top: 0%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
@@ -171,8 +137,8 @@ body {
 }
 .register-heading{
     text-align: center;
-    margin-top: 8%;
-    margin-bottom: -15%;
+    margin-top: 5%;
+    margin-bottom: -10%;
     color: #495057;
 }
 </style>
@@ -243,7 +209,8 @@ body {
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome</h3>
                         <p>You are 30 seconds away from earning your own money!</p>
-                        <input type="submit" name="" value="Login"/><br/>
+                        <a href="login.php" class="btn btn-secondary">Login</a>
+                       
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -251,49 +218,37 @@ body {
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.php" role="tab" aria-controls="home" aria-selected="true">BIDDER</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="auctioner.php" role="tab" aria-controls="profile" aria-selected="false">AUCTIONER</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="login.php" role="tab" aria-controls="profile" aria-selected="false">AUCTIONER</a>
                             </li>
                         </ul>
-                       
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">daftar sebagai auctioner sekarang!!!</h3>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Daftar sebagai bidder</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="username"class="form-control" placeholder="Username*" value="" />
+                                            <input type="text" name="username" class="form-control" minlength="8" maxlength="20" placeholder="Username*" value="" />
                                         </div>
+                                        
+                                        
                                         <div class="form-group">
-                                            <input type="text" name="noKTP" class="form-control" placeholder="no KTP *" value="" />
+                                            <input type="password" name="password" class="form-control"  placeholder="Password *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" name="fullname" class="form-control" placeholder="Full Name *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" name="email_auctioner" class="form-control" placeholder="Email *" value="" />
-                                        </div>
+                                        
+                                        <input type="submit" name="register" class="btnRegister"  value="Register"/>
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="alamat_auctioner" class="form-control" placeholder="Adress *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="phoneNumber" maxlength="12" minlength="11" class="form-control" placeholder="Phone *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="noATM" class="form-control" placeholder="no ATM *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control" placeholder="`password *" value="" />
-                                        </div>
-                                        <input type="submit" name="auctioner" class="btnRegister"  value="Register"/>
-                                    </div>
+                                    
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
 
+            </div>
 </form>
+
 
 </body>
 </html>
